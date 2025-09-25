@@ -1,0 +1,301 @@
+/* Person Card Styles */
+.person-card {
+  background: #ffffff;
+  border: 2px solid #808080;
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  box-shadow: 1px 1px 0 #000, -1px -1px 0 #c0c0c0;
+  display: flex;
+  flex-direction: column;
+  min-height: 300px;
+  transition: all 0.2s ease;
+}
+
+.person-card:hover {
+  box-shadow: 2px 2px 0 #000, -2px -2px 0 #c0c0c0;
+  transform: translateY(-1px);
+}
+
+/* Card Header */
+.card-header {
+  background: #c0c0c0;
+  border-bottom: 1px solid #808080;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+}
+
+.person-avatar {
+  flex-shrink: 0;
+}
+
+.avatar-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #0000ff;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 16px;
+  border: 2px solid #000080;
+  box-shadow: 1px 1px 0 #000, -1px -1px 0 #c0c0c0;
+}
+
+.person-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.person-name {
+  font-size: 14px;
+  font-weight: bold;
+  color: #000;
+  margin: 0 0 2px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.person-age {
+  font-size: 11px;
+  color: #808080;
+  margin: 0;
+}
+
+.distance-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 2px 6px;
+  border-radius: 0;
+  font-size: 9px;
+  font-weight: bold;
+  color: #000;
+  border: 1px solid #000;
+  box-shadow: 1px 1px 0 #000, -1px -1px 0 #c0c0c0;
+}
+
+/* Card Content */
+.card-content {
+  padding: 12px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.location-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.location-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: #000;
+}
+
+.culture-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.culture-tag {
+  background: #0000ff;
+  color: #ffffff;
+  padding: 2px 6px;
+  font-size: 10px;
+  font-weight: bold;
+  border: 1px solid #000080;
+  box-shadow: 1px 1px 0 #000, -1px -1px 0 #c0c0c0;
+  display: inline-block;
+  width: fit-content;
+}
+
+.languages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.language-tag {
+  background: #c0c0c0;
+  color: #000;
+  padding: 1px 4px;
+  font-size: 9px;
+  border: 1px solid #808080;
+  border-top: 1px solid #ffffff;
+  border-left: 1px solid #ffffff;
+  box-shadow: 1px 1px 0 #000, -1px -1px 0 #c0c0c0;
+}
+
+.interests h4 {
+  font-size: 11px;
+  color: #000;
+  margin: 0 0 6px 0;
+  font-weight: bold;
+}
+
+.interests-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.interest-tag {
+  background: #ffff00;
+  color: #000;
+  padding: 1px 4px;
+  font-size: 9px;
+  border: 1px solid #808000;
+  border-top: 1px solid #ffffff;
+  border-left: 1px solid #ffffff;
+  box-shadow: 1px 1px 0 #000, -1px -1px 0 #c0c0c0;
+}
+
+.bio {
+  flex: 1;
+}
+
+.bio p {
+  font-size: 11px;
+  color: #000;
+  line-height: 1.4;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Card Footer */
+.card-footer {
+  background: #c0c0c0;
+  border-top: 1px solid #808080;
+  padding: 8px 12px;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.mac-button.secondary {
+  background: #c0c0c0;
+  border: 2px solid #808080;
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  box-shadow: 1px 1px 0 #000, -1px -1px 0 #c0c0c0;
+  padding: 4px 8px;
+  font-family: 'Chicago', 'Monaco', 'Menlo', monospace;
+  font-size: 10px;
+  color: #000;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+  justify-content: center;
+}
+
+.mac-button.secondary:hover {
+  background: #d0d0d0;
+}
+
+.mac-button.secondary:active {
+  background: #a0a0a0;
+  box-shadow: inset 1px 1px 0 #000, inset -1px -1px 0 #c0c0c0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .person-card {
+    min-height: 280px;
+  }
+  
+  .card-header {
+    padding: 10px;
+    gap: 10px;
+  }
+  
+  .avatar-circle {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+  
+  .person-name {
+    font-size: 13px;
+  }
+  
+  .person-age {
+    font-size: 10px;
+  }
+  
+  .card-content {
+    padding: 10px;
+    gap: 10px;
+  }
+  
+  .card-footer {
+    padding: 6px 10px;
+    gap: 6px;
+  }
+  
+  .mac-button.secondary {
+    font-size: 9px;
+    padding: 3px 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .person-card {
+    min-height: 260px;
+  }
+  
+  .card-header {
+    padding: 8px;
+    gap: 8px;
+  }
+  
+  .avatar-circle {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+  }
+  
+  .person-name {
+    font-size: 12px;
+  }
+  
+  .person-age {
+    font-size: 9px;
+  }
+  
+  .card-content {
+    padding: 8px;
+    gap: 8px;
+  }
+  
+  .bio p {
+    font-size: 10px;
+  }
+  
+  .card-footer {
+    padding: 6px 8px;
+    gap: 4px;
+  }
+  
+  .mac-button.secondary {
+    font-size: 8px;
+    padding: 2px 4px;
+  }
+}

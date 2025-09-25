@@ -1,0 +1,50 @@
+/* Old Apple Mac System Fonts and Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Chicago', 'Monaco', 'Menlo', monospace;
+  background: #c0c0c0;
+  color: #000;
+  line-height: 1.4;
+  font-size: 12px;
+  -webkit-font-smoothing: none;
+  font-smoothing: none;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+#root {
+  min-height: 100vh;
+  background: #c0c0c0;
+}
+
+/* Scrollbar styling for old Mac feel */
+::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background: #c0c0c0;
+  border: 1px solid #808080;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c0c0c0;
+  border: 1px solid #808080;
+  border-top: 1px solid #ffffff;
+  border-left: 1px solid #ffffff;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a0a0a0;
+}
+
+::-webkit-scrollbar-corner {
+  background: #c0c0c0;
+}
