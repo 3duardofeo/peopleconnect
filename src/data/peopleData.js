@@ -130,19 +130,19 @@ export const peopleData = [
   },
   {
     id: 9,
-    name: "Omar Al-Rashid",
+    name: "Loredana Cannata",
     age: 33,
-    culture: "Emirati",
+    culture: "Italian",
     location: {
-      city: "Dubai",
-      country: "UAE",
-      zipCode: "00000"
+      city: "Palermo",
+      country: "Italy",
+      zipCode: "95968"
     },
-    languages: ["Arabic", "English", "Urdu"],
-    interests: ["Falconry", "Desert Culture", "Business", "Technology"],
-    bio: "Business executive and cultural preservationist. Proud of our Bedouin heritage and love sharing the modern transformation of the UAE.",
+    languages: ["Italian", "English"],
+    interests: ["Fashion", "Art", "Movies", "Dancing"],
+    bio: "Italian actress and model. Love sharing Italian culture and fashion with others.",
     distance: 28.9,
-    avatar: `${import.meta.env.BASE_URL}images/omar.jpg`
+    avatar: `${import.meta.env.BASE_URL}images/loredana.jpg`
   },
   {
     id: 10,
@@ -194,19 +194,19 @@ export const peopleData = [
   },
   {
     id: 13,
-    name: "Hassan Al-Mahmoud",
+    name: "Ilaria D'amico",
     age: 34,
-    culture: "Saudi Arabian",
+    culture: "Italian",
     location: {
-      city: "Riyadh",
-      country: "Saudi Arabia",
+      city: "Torino",
+      country: "Italy",
       zipCode: "11564"
     },
-    languages: ["Arabic", "English", "Turkish"],
-    interests: ["Islamic Art", "Calligraphy", "Architecture", "Poetry"],
-    bio: "Islamic art scholar and calligrapher. Passionate about preserving and sharing the beauty of Islamic culture and traditions.",
+    languages: ["Italian", "English", "Spanish"],
+    interests: ["Fashion", "Art", "Soccer", "Poetry"],
+    bio: "TV presenter and fashion enthusiast. Love sharing Italian culture and fashion with others.",
     distance: 42.1,
-    avatar: `${import.meta.env.BASE_URL}images/hassan.jpg`
+    avatar: `${import.meta.env.BASE_URL}images/ilaria.jpg`
   },
   {
     id: 14,
