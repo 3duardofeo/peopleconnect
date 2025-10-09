@@ -14,7 +14,7 @@ export const peopleData = [
     interests: ["Anime", "Sushi Making", "Martial Arts", "Technology"],
     bio: "Passionate about sharing Japanese culture and learning about others. Love connecting with people who appreciate traditional arts and modern innovation.",
     distance: 2.3,
-    avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face"
+    avatar: "/images/yuki.jpg"
   },
   {
     id: 2,
@@ -29,7 +29,8 @@ export const peopleData = [
     languages: ["Spanish", "English", "French"],
     interests: ["Cooking", "Dancing", "Art", "Photography"],
     bio: "Chef and cultural ambassador. I love sharing authentic Mexican recipes and learning about different cuisines from around the world.",
-    distance: 5.7
+    distance: 5.7,
+    avatar: "/images/maria.jpg"
   },
   {
     id: 3,
@@ -44,7 +45,8 @@ export const peopleData = [
     languages: ["Arabic", "English", "French"],
     interests: ["History", "Calligraphy", "Music", "Architecture"],
     bio: "Historian and calligraphy artist. Fascinated by ancient civilizations and love sharing the rich history of Egypt with others.",
-    distance: 8.2
+    distance: 8.2,
+    avatar: "/images/ahmed.jpg"
   },
   {
     id: 4,
@@ -59,7 +61,8 @@ export const peopleData = [
     languages: ["Hindi", "English", "Gujarati", "Sanskrit"],
     interests: ["Yoga", "Meditation", "Classical Dance", "Spirituality"],
     bio: "Yoga instructor and spiritual seeker. Passionate about sharing ancient wisdom and helping others find inner peace.",
-    distance: 12.1
+    distance: 12.1,
+    avatar: "/images/priya.jpg"
   },
   {
     id: 5,
@@ -74,7 +77,8 @@ export const peopleData = [
     languages: ["Danish", "English", "German", "Swedish"],
     interests: ["Design", "Sustainability", "Cycling", "Nordic Culture"],
     bio: "Designer and environmental activist. Love the Danish concept of 'hygge' and enjoy sharing Nordic lifestyle with others.",
-    distance: 15.8
+    distance: 15.8,
+    avatar: "/images/lars.jpg"
   },
   {
     id: 6,
@@ -89,7 +93,8 @@ export const peopleData = [
     languages: ["English", "Yoruba", "French"],
     interests: ["Fashion", "Music", "Literature", "Entrepreneurship"],
     bio: "Fashion designer and entrepreneur. Proud of my Nigerian heritage and love connecting with creative minds worldwide.",
-    distance: 18.5
+    distance: 18.5,
+    avatar: "/images/aisha.jpg"
   },
   {
     id: 7,
@@ -104,7 +109,8 @@ export const peopleData = [
     languages: ["Mandarin", "English", "Japanese"],
     interests: ["Calligraphy", "Tea Ceremony", "Martial Arts", "Philosophy"],
     bio: "Traditional Chinese medicine practitioner and calligraphy master. Passionate about sharing ancient Chinese wisdom and healing arts.",
-    distance: 22.3
+    distance: 22.3,
+    avatar: "/images/chen.jpg"
   },
   {
     id: 8,
@@ -119,7 +125,8 @@ export const peopleData = [
     languages: ["Portuguese", "English", "Spanish"],
     interests: ["Samba", "Capoeira", "Nature", "Carnival"],
     bio: "Dancer and environmentalist. Love the vibrant Brazilian culture and enjoy sharing our passion for music, dance, and nature.",
-    distance: 25.7
+    distance: 25.7,
+    avatar: "/images/isabella.jpg"
   },
   {
     id: 9,
@@ -134,7 +141,8 @@ export const peopleData = [
     languages: ["Arabic", "English", "Urdu"],
     interests: ["Falconry", "Desert Culture", "Business", "Technology"],
     bio: "Business executive and cultural preservationist. Proud of our Bedouin heritage and love sharing the modern transformation of the UAE.",
-    distance: 28.9
+    distance: 28.9,
+    avatar: "/images/omar.jpg"
   },
   {
     id: 10,
@@ -149,7 +157,8 @@ export const peopleData = [
     languages: ["French", "English", "Italian", "Spanish"],
     interests: ["Art", "Literature", "Wine", "Fashion"],
     bio: "Art curator and wine enthusiast. Passionate about French culture, art, and cuisine. Love connecting with fellow art lovers.",
-    distance: 31.2
+    distance: 31.2,
+    avatar: "/images/sophie.jpg"
   },
   {
     id: 11,
@@ -164,7 +173,8 @@ export const peopleData = [
     languages: ["English", "Twi", "French"],
     interests: ["Drumming", "Traditional Music", "Community", "Education"],
     bio: "Music teacher and community leader. Proud of our rich musical traditions and love sharing the rhythm of Ghana with the world.",
-    distance: 35.6
+    distance: 35.6,
+    avatar: "/images/kwame.jpg"
   },
   {
     id: 12,
@@ -179,7 +189,8 @@ export const peopleData = [
     languages: ["Russian", "English", "German"],
     interests: ["Literature", "Classical Music", "Ballet", "Chess"],
     bio: "Literature professor and chess master. Fascinated by Russian literature and classical arts. Love intellectual conversations.",
-    distance: 38.4
+    distance: 38.4,
+    avatar: "/images/elena.jpg"
   },
   {
     id: 13,
@@ -194,7 +205,8 @@ export const peopleData = [
     languages: ["Arabic", "English", "Turkish"],
     interests: ["Islamic Art", "Calligraphy", "Architecture", "Poetry"],
     bio: "Islamic art scholar and calligrapher. Passionate about preserving and sharing the beauty of Islamic culture and traditions.",
-    distance: 42.1
+    distance: 42.1,
+    avatar: "/images/hassan.jpg"
   },
   {
     id: 14,
@@ -209,7 +221,8 @@ export const peopleData = [
     languages: ["Korean", "English", "Japanese"],
     interests: ["K-Pop", "Technology", "Gaming", "Korean Cuisine"],
     bio: "Software developer and K-culture enthusiast. Love sharing Korean pop culture and technology innovations with others.",
-    distance: 45.8
+    distance: 45.8,
+    avatar: "/images/kim.jpg"
   },
   {
     id: 15,
@@ -224,7 +237,8 @@ export const peopleData = [
     languages: ["Arabic", "French", "English", "Berber"],
     interests: ["Henna Art", "Traditional Crafts", "Cooking", "Sufi Music"],
     bio: "Artisan and cultural guide. Passionate about Moroccan crafts and traditions. Love sharing the magic of Marrakech with visitors.",
-    distance: 48.7
+    distance: 48.7,
+    avatar: "/images/fatima.jpg"
   },
   {
     id: 16,
