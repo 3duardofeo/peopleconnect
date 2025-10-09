@@ -239,5 +239,20 @@ export const peopleData = [
     interests: ["Technology", "Entrepreneurship", "Soccer", "Latin Music"],
     bio: "Tech entrepreneur and cultural bridge-builder. Proud of my Venezuelan heritage while embracing the vibrant diversity of Miami. Love connecting people through technology and culture.",
     distance: 0.5
+  },
+  {
+    id: 17,
+    name: "Marina Feo",
+    age: 10,
+    culture: "Venezuelan-American",
+    location: {
+      city: "Miami",
+      country: "United States",
+      zipCode: "33101"
+    },
+    languages: ["English", "Italian"],
+    interests: ["Art", "Music", "Dancing", "Reading"],
+    bio: "Young artist and language enthusiast. Love expressing myself through art and music. Excited to learn about different cultures and make new friends from around the world.",
+    distance: 0.3
   }
 ]
