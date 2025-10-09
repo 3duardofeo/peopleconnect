@@ -21,7 +21,18 @@ const PersonCard = ({ person }) => {
     <div className="person-card">
       <div className="card-header">
         <div className="person-avatar">
-          <div className="avatar-circle">
+          {person.avatar ? (
+            <img 
+              src={person.avatar} 
+              alt={`${person.name}'s avatar`}
+              className="avatar-image"
+              onError={(e) => {
+                e.target.style.display = 'none';
+                e.target.nextSibling.style.display = 'flex';
+              }}
+            />
+          ) : null}
+          <div className="avatar-circle" style={{ display: person.avatar ? 'none' : 'flex' }}>
             {person.name.charAt(0).toUpperCase()}
           </div>
         </div>
