@@ -224,5 +224,20 @@ export const peopleData = [
     interests: ["Henna Art", "Traditional Crafts", "Cooking", "Sufi Music"],
     bio: "Artisan and cultural guide. Passionate about Moroccan crafts and traditions. Love sharing the magic of Marrakech with visitors.",
     distance: 48.7
+  },
+  {
+    id: 16,
+    name: "Eduardo Feo",
+    age: 28,
+    culture: "Venezuelan-American",
+    location: {
+      city: "Miami",
+      country: "United States",
+      zipCode: "33101"
+    },
+    languages: ["Spanish", "English", "Portuguese"],
+    interests: ["Technology", "Entrepreneurship", "Soccer", "Latin Music"],
+    bio: "Tech entrepreneur and cultural bridge-builder. Proud of my Venezuelan heritage while embracing the vibrant diversity of Miami. Love connecting people through technology and culture.",
+    distance: 0.5
   }
 ]
