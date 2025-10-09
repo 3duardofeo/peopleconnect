@@ -240,7 +240,7 @@ export const peopleData = [
     interests: ["Technology", "Entrepreneurship", "Soccer", "Latin Music"],
     bio: "Tech entrepreneur and cultural bridge-builder. Proud of my Venezuelan heritage while embracing the vibrant diversity of Miami. Love connecting people through technology and culture.",
     distance: 0.5,
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
+    avatar: "/images/eduardo.jpg"
   },
   {
     id: 17,
@@ -256,6 +256,6 @@ export const peopleData = [
     interests: ["Art", "Music", "Dancing", "Reading"],
     bio: "Young artist and language enthusiast. Love expressing myself through art and music. Excited to learn about different cultures and make new friends from around the world.",
     distance: 0.3,
-    avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face"
+    avatar: "/images/marina.jpg"
   }
 ]
