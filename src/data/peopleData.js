@@ -235,7 +235,7 @@ export const peopleData = [
       country: "United States",
       zipCode: "33101"
     },
-    languages: ["Spanish", "English", "Portuguese"],
+    languages: ["Spanish", "English", "Portuguese", "Italian"],
     interests: ["Technology", "Entrepreneurship", "Soccer", "Latin Music"],
     bio: "Tech entrepreneur and cultural bridge-builder. Proud of my Venezuelan heritage while embracing the vibrant diversity of Miami. Love connecting people through technology and culture.",
     distance: 0.5
