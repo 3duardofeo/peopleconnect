@@ -8,7 +8,8 @@ export const peopleData = [
     location: {
       city: "Tokyo",
       country: "Japan",
-      zipCode: "100-0001"
+      zipCode: "100-0001",
+      coordinates: { lat: 35.6762, lng: 139.6503 }
     },
     languages: ["Japanese", "English", "Korean"],
     interests: ["Anime", "Sushi Making", "Martial Arts", "Technology"],
@@ -24,7 +25,8 @@ export const peopleData = [
     location: {
       city: "Mexico City",
       country: "Mexico",
-      zipCode: "06000"
+      zipCode: "06000",
+      coordinates: { lat: 19.4326, lng: -99.1332 }
     },
     languages: ["Spanish", "English", "French"],
     interests: ["Cooking", "Dancing", "Art", "Photography"],
@@ -40,7 +42,8 @@ export const peopleData = [
     location: {
       city: "Cairo",
       country: "Egypt",
-      zipCode: "11511"
+      zipCode: "11511",
+      coordinates: { lat: 30.0444, lng: 31.2357 }
     },
     languages: ["Arabic", "English", "French"],
     interests: ["History", "Calligraphy", "Music", "Architecture"],

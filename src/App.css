@@ -114,8 +114,21 @@
 .results-header {
   background: #c0c0c0;
   border-bottom: 1px solid #808080;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 8px 16px;
   font-weight: bold;
+}
+
+.view-toggle {
+  display: flex;
+  gap: 4px;
+}
+
+.view-toggle .mac-button {
+  padding: 4px 12px;
+  font-size: 11px;
 }
 
 .results-header h2 {

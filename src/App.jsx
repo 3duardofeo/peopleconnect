@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import SearchBar from './components/SearchBar'
 import PeopleGrid from './components/PeopleGrid'
+import MapView from './components/MapView'
 import Toast from './components/Toast'
 import { peopleData } from './data/peopleData'
 import './App.css'
@@ -21,6 +22,7 @@ function App() {
   const [activeFilter, setActiveFilter] = useState('all')
   const [statusFilter, setStatusFilter] = useState('all')
   const [toast, setToast] = useState(null)
+  const [viewMode, setViewMode] = useState('grid') // 'grid' or 'map'
 
   useEffect(() => {
     filterPeople()
@@ -168,14 +170,38 @@ function App() {
         <div className="results-section">
           <div className="results-header">
             <h2>Nearby People ({filteredPeople.length})</h2>
+            <div className="view-toggle">
+              <button 
+                className={`mac-button ${viewMode === 'grid' ? 'primary' : 'secondary'}`}
+                onClick={() => setViewMode('grid')}
+              >
+                📋 Grid
+              </button>
+              <button 
+                className={`mac-button ${viewMode === 'map' ? 'primary' : 'secondary'}`}
+                onClick={() => setViewMode('map')}
+              >
+                🗺️ Map
+              </button>
+            </div>
           </div>
-          <PeopleGrid 
-            people={filteredPeople} 
-            likedPeople={likedPeople}
-            connectionStatus={connectionStatus}
-            onLike={handleLike}
-            onConnect={handleConnect}
-          />
+          {viewMode === 'grid' ? (
+            <PeopleGrid 
+              people={filteredPeople} 
+              likedPeople={likedPeople}
+              connectionStatus={connectionStatus}
+              onLike={handleLike}
+              onConnect={handleConnect}
+            />
+          ) : (
+            <MapView
+              people={filteredPeople}
+              likedPeople={likedPeople}
+              connectionStatus={connectionStatus}
+              onLike={handleLike}
+              onConnect={handleConnect}
+            />
+          )}
         </div>
       </main>
       {toast && <Toast message={toast} onClose={closeToast} />}
