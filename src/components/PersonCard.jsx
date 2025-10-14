@@ -19,6 +19,36 @@ const PersonCard = ({ person, isLiked, connectionStatus, onLike, onConnect }) =>
 
   const handleLikeClick = () => {
     onLike(person.id)
+    playLikeSound(isLiked)
+  }
+
+  const playLikeSound = (wasLiked) => {
+    // Create a simple sound effect using Web Audio API
+    const audioContext = new (window.AudioContext || window.webkitAudioContext)()
+    const oscillator = audioContext.createOscillator()
+    const gainNode = audioContext.createGain()
+    
+    oscillator.connect(gainNode)
+    gainNode.connect(audioContext.destination)
+    
+    if (wasLiked) {
+      // Unlike sound - descending tones (ICQ-style "uh-oh")
+      oscillator.frequency.setValueAtTime(600, audioContext.currentTime)
+      oscillator.frequency.exponentialRampToValueAtTime(400, audioContext.currentTime + 0.1)
+      oscillator.frequency.exponentialRampToValueAtTime(300, audioContext.currentTime + 0.2)
+    } else {
+      // Like sound - ascending tones (ICQ-style "uh-oh" reversed)
+      oscillator.frequency.setValueAtTime(400, audioContext.currentTime)
+      oscillator.frequency.exponentialRampToValueAtTime(600, audioContext.currentTime + 0.1)
+      oscillator.frequency.exponentialRampToValueAtTime(800, audioContext.currentTime + 0.2)
+    }
+    
+    oscillator.type = 'sine'
+    gainNode.gain.setValueAtTime(0.3, audioContext.currentTime)
+    gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.3)
+    
+    oscillator.start(audioContext.currentTime)
+    oscillator.stop(audioContext.currentTime + 0.3)
   }
 
   const handleConnectClick = () => {
