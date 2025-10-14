@@ -287,5 +287,21 @@ export const peopleData = [
     bio: "UX Designer in Firefox Mobile Team. Passionate about creating intuitive user experiences and exploring design innovations. Love illustration, music, and discovering new Asian cuisine.",
     distance: 8.5,
     avatar: `${import.meta.env.BASE_URL}images/jeff.jpg`
+  },
+  {
+    id: 19,
+    name: "Aarjav Pandya",
+    age: 29,
+    culture: "Indian-Canadian",
+    location: {
+      city: "Toronto",
+      country: "Canada",
+      zipCode: "M5H 2N2"
+    },
+    languages: ["English", "French", "Hindi"],
+    interests: ["Music", "Technology", "Outdoor"],
+    bio: "UX Designer inside Firefox Mobile UX Team in Mozilla specialized in Android Design. Passionate about creating seamless mobile experiences and exploring the intersection of design and technology.",
+    distance: 12.2,
+    avatar: `${import.meta.env.BASE_URL}images/aarjav.jpg`
   }
 ]
