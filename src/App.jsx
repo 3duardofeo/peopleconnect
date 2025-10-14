@@ -107,11 +107,23 @@ function App() {
   }
 
   const handleConnect = (personId) => {
-    setConnectionStatus(prev => ({
-      ...prev,
-      [personId]: 'requested'
-    }))
-    showToast('Connection requested!')
+    const currentStatus = connectionStatus[personId]
+    
+    if (currentStatus === 'requested') {
+      // Cancel the request
+      setConnectionStatus(prev => ({
+        ...prev,
+        [personId]: 'none'
+      }))
+      showToast('Request cancelled!')
+    } else {
+      // Send new request
+      setConnectionStatus(prev => ({
+        ...prev,
+        [personId]: 'requested'
+      }))
+      showToast('Connection requested!')
+    }
   }
 
   const showToast = (message) => {

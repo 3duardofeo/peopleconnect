@@ -262,14 +262,22 @@
   font-family: 'Chicago', 'Monaco', 'Menlo', monospace;
   font-size: 10px;
   color: #000;
-  cursor: not-allowed;
+  cursor: pointer;
   font-weight: bold;
   display: flex;
   align-items: center;
   gap: 4px;
   flex: 1;
   justify-content: center;
-  opacity: 0.8;
+}
+
+.mac-button.requested:hover {
+  background: #ff9900;
+}
+
+.mac-button.requested:active {
+  background: #dd8800;
+  box-shadow: inset 1px 1px 0 #000, inset -1px -1px 0 #ffcc66;
 }
 
 .mac-button.accepted {

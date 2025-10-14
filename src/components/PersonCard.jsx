@@ -22,7 +22,7 @@ const PersonCard = ({ person, isLiked, connectionStatus, onLike, onConnect }) =>
   }
 
   const handleConnectClick = () => {
-    if (connectionStatus === 'none') {
+    if (connectionStatus !== 'accepted') {
       onConnect(person.id)
     }
   }
@@ -30,7 +30,7 @@ const PersonCard = ({ person, isLiked, connectionStatus, onLike, onConnect }) =>
   const getConnectButtonText = () => {
     switch (connectionStatus) {
       case 'requested':
-        return 'Requested'
+        return 'Cancel Request'
       case 'accepted':
         return 'Accepted'
       default:
@@ -122,7 +122,7 @@ const PersonCard = ({ person, isLiked, connectionStatus, onLike, onConnect }) =>
         <button 
           className={`mac-button ${getConnectButtonClass()}`}
           onClick={handleConnectClick}
-          disabled={connectionStatus !== 'none'}
+          disabled={connectionStatus === 'accepted'}
         >
           <MessageCircle size={14} />
           {getConnectButtonText()}
