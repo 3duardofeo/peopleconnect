@@ -4,17 +4,17 @@ import './PersonCard.css'
 
 const PersonCard = ({ person, isLiked, connectionStatus, onLike, onConnect }) => {
   const getDistanceColor = (distance) => {
-    if (distance < 5) return '#00ff00' // Green for very close
-    if (distance < 15) return '#ffff00' // Yellow for close
-    if (distance < 50) return '#ff8000' // Orange for moderate
-    return '#ff0000' // Red for far
+    if (distance < 100) return '#00aa00' // Dark green for very close (good contrast)
+    if (distance < 1500) return '#ff9800' // Orange for North America (good contrast)
+    if (distance < 5000) return '#f57c00' // Dark orange for nearby international (good contrast)
+    return '#d32f2f' // Dark red for far international (good contrast)
   }
 
   const getDistanceText = (distance) => {
-    if (distance < 1) return 'Very close'
-    if (distance < 5) return `${distance.toFixed(1)} miles`
-    if (distance < 15) return `${distance.toFixed(0)} miles`
-    return `${distance.toFixed(0)} miles`
+    if (distance === 0) return 'Local'
+    if (distance < 100) return `${distance} mi`
+    if (distance < 1000) return `${distance} mi`
+    return `${distance.toLocaleString()} mi`
   }
 
   const handleLikeClick = () => {
