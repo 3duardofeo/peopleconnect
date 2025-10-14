@@ -2,7 +2,7 @@ import React from 'react'
 import PersonCard from './PersonCard'
 import './PeopleGrid.css'
 
-const PeopleGrid = ({ people }) => {
+const PeopleGrid = ({ people, likedPeople, onLike }) => {
   if (people.length === 0) {
     return (
       <div className="no-results">
@@ -16,7 +16,12 @@ const PeopleGrid = ({ people }) => {
   return (
     <div className="people-grid">
       {people.map((person) => (
-        <PersonCard key={person.id} person={person} />
+        <PersonCard 
+          key={person.id} 
+          person={person}
+          isLiked={likedPeople.includes(person.id)}
+          onLike={onLike}
+        />
       ))}
     </div>
   )

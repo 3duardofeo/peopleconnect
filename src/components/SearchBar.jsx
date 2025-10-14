@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Search, MapPin, Globe, Hash } from 'lucide-react'
 import './SearchBar.css'
 
-const SearchBar = ({ onSearch }) => {
+const SearchBar = ({ onSearch, onFilterChange, activeFilter, likedCount }) => {
   const [searchTerm, setSearchTerm] = useState('')
   const [searchType, setSearchType] = useState('all')
 
@@ -70,6 +70,12 @@ const SearchBar = ({ onSearch }) => {
       
       <div className="search-filters">
         <div className="filter-tags">
+          <span 
+            className={`filter-tag ${activeFilter === 'liked' ? 'active' : ''}`}
+            onClick={() => onFilterChange(activeFilter === 'liked' ? 'all' : 'liked')}
+          >
+            ❤️ Liked {likedCount > 0 && `(${likedCount})`}
+          </span>
           <span className="filter-tag">Nearby</span>
           <span className="filter-tag">Cultural Exchange</span>
           <span className="filter-tag">Language Learning</span>

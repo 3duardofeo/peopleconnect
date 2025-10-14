@@ -150,6 +150,24 @@
   box-shadow: inset 1px 1px 0 #000, inset -1px -1px 0 #c0c0c0;
 }
 
+.filter-tag.active {
+  background: #ff0000;
+  border: 1px solid #cc0000;
+  border-top: 1px solid #ff6666;
+  border-left: 1px solid #ff6666;
+  box-shadow: 1px 1px 0 #000, -1px -1px 0 #ff6666;
+  color: #ffffff;
+}
+
+.filter-tag.active:hover {
+  background: #dd0000;
+}
+
+.filter-tag.active:active {
+  background: #aa0000;
+  box-shadow: inset 1px 1px 0 #000, inset -1px -1px 0 #ff6666;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .search-input-group {

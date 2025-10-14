@@ -2,7 +2,7 @@ import React from 'react'
 import { MapPin, Globe, MessageCircle, Heart } from 'lucide-react'
 import './PersonCard.css'
 
-const PersonCard = ({ person }) => {
+const PersonCard = ({ person, isLiked, onLike }) => {
   const getDistanceColor = (distance) => {
     if (distance < 5) return '#00ff00' // Green for very close
     if (distance < 15) return '#ffff00' // Yellow for close
@@ -15,6 +15,10 @@ const PersonCard = ({ person }) => {
     if (distance < 5) return `${distance.toFixed(1)} miles`
     if (distance < 15) return `${distance.toFixed(0)} miles`
     return `${distance.toFixed(0)} miles`
+  }
+
+  const handleLikeClick = () => {
+    onLike(person.id)
   }
 
   return (
@@ -91,9 +95,12 @@ const PersonCard = ({ person }) => {
           <MessageCircle size={14} />
           Connect
         </button>
-        <button className="mac-button secondary">
-          <Heart size={14} />
-          Like
+        <button 
+          className={`mac-button ${isLiked ? 'liked' : 'secondary'}`}
+          onClick={handleLikeClick}
+        >
+          <Heart size={14} fill={isLiked ? 'currentColor' : 'none'} />
+          {isLiked ? 'Unlike' : 'Like'}
         </button>
       </div>
     </div>
