@@ -56,7 +56,7 @@ const SearchBar = ({ onSearch }) => {
                 searchType === 'city' ? 'Enter city name...' :
                 searchType === 'country' ? 'Enter country name...' :
                 searchType === 'name' ? 'Enter person name...' :
-                'Search people by name, city, country, or zip...'
+                'Search by name, location, interests, languages, or description...'
               }
               className="mac-input"
             />

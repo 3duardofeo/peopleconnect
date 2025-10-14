@@ -38,7 +38,10 @@ function App() {
             person.location.city.toLowerCase().includes(term) ||
             person.location.country.toLowerCase().includes(term) ||
             person.location.zipCode.toLowerCase().includes(term) ||
-            person.culture.toLowerCase().includes(term)
+            person.culture.toLowerCase().includes(term) ||
+            person.bio.toLowerCase().includes(term) ||
+            person.interests.some(interest => interest.toLowerCase().includes(term)) ||
+            person.languages.some(language => language.toLowerCase().includes(term))
           )
       }
     })
