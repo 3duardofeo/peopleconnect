@@ -2,7 +2,7 @@ import React from 'react'
 import { MapPin, Globe, MessageCircle, Heart } from 'lucide-react'
 import './PersonCard.css'
 
-const PersonCard = ({ person, isLiked, onLike }) => {
+const PersonCard = ({ person, isLiked, connectionStatus, onLike, onConnect }) => {
   const getDistanceColor = (distance) => {
     if (distance < 5) return '#00ff00' // Green for very close
     if (distance < 15) return '#ffff00' // Yellow for close
@@ -19,6 +19,34 @@ const PersonCard = ({ person, isLiked, onLike }) => {
 
   const handleLikeClick = () => {
     onLike(person.id)
+  }
+
+  const handleConnectClick = () => {
+    if (connectionStatus === 'none') {
+      onConnect(person.id)
+    }
+  }
+
+  const getConnectButtonText = () => {
+    switch (connectionStatus) {
+      case 'requested':
+        return 'Requested'
+      case 'accepted':
+        return 'Accepted'
+      default:
+        return 'Connect'
+    }
+  }
+
+  const getConnectButtonClass = () => {
+    switch (connectionStatus) {
+      case 'requested':
+        return 'requested'
+      case 'accepted':
+        return 'accepted'
+      default:
+        return 'secondary'
+    }
   }
 
   return (
@@ -91,9 +119,13 @@ const PersonCard = ({ person, isLiked, onLike }) => {
       </div>
 
       <div className="card-footer">
-        <button className="mac-button secondary">
+        <button 
+          className={`mac-button ${getConnectButtonClass()}`}
+          onClick={handleConnectClick}
+          disabled={connectionStatus !== 'none'}
+        >
           <MessageCircle size={14} />
-          Connect
+          {getConnectButtonText()}
         </button>
         <button 
           className={`mac-button ${isLiked ? 'liked' : 'secondary'}`}

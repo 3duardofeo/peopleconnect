@@ -252,6 +252,45 @@
   box-shadow: inset 1px 1px 0 #000, inset -1px -1px 0 #ff6666;
 }
 
+.mac-button.requested {
+  background: #ffaa00;
+  border: 2px solid #cc8800;
+  border-top: 2px solid #ffcc66;
+  border-left: 2px solid #ffcc66;
+  box-shadow: 1px 1px 0 #000, -1px -1px 0 #ffcc66;
+  padding: 4px 8px;
+  font-family: 'Chicago', 'Monaco', 'Menlo', monospace;
+  font-size: 10px;
+  color: #000;
+  cursor: not-allowed;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+  justify-content: center;
+  opacity: 0.8;
+}
+
+.mac-button.accepted {
+  background: #00aa00;
+  border: 2px solid #008800;
+  border-top: 2px solid #66ff66;
+  border-left: 2px solid #66ff66;
+  box-shadow: 1px 1px 0 #000, -1px -1px 0 #66ff66;
+  padding: 4px 8px;
+  font-family: 'Chicago', 'Monaco', 'Menlo', monospace;
+  font-size: 10px;
+  color: #ffffff;
+  cursor: not-allowed;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+  justify-content: center;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .person-card {

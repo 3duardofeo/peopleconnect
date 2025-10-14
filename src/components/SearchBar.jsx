@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Search, MapPin, Globe, Hash } from 'lucide-react'
 import './SearchBar.css'
 
-const SearchBar = ({ onSearch, onFilterChange, activeFilter, likedCount }) => {
+const SearchBar = ({ onSearch, onFilterChange, onStatusFilterChange, activeFilter, statusFilter, likedCount }) => {
   const [searchTerm, setSearchTerm] = useState('')
   const [searchType, setSearchType] = useState('all')
 
@@ -79,6 +79,27 @@ const SearchBar = ({ onSearch, onFilterChange, activeFilter, likedCount }) => {
           <span className="filter-tag">Nearby</span>
           <span className="filter-tag">Cultural Exchange</span>
           <span className="filter-tag">Language Learning</span>
+        </div>
+        <div className="status-filters">
+          <span className="filter-label">Status:</span>
+          <span 
+            className={`filter-tag ${statusFilter === 'requested' ? 'active-status' : ''}`}
+            onClick={() => onStatusFilterChange(statusFilter === 'requested' ? 'all' : 'requested')}
+          >
+            📤 Requested
+          </span>
+          <span 
+            className={`filter-tag ${statusFilter === 'not-requested' ? 'active-status' : ''}`}
+            onClick={() => onStatusFilterChange(statusFilter === 'not-requested' ? 'all' : 'not-requested')}
+          >
+            ⭕ Not Requested
+          </span>
+          <span 
+            className={`filter-tag ${statusFilter === 'accepted' ? 'active-status' : ''}`}
+            onClick={() => onStatusFilterChange(statusFilter === 'accepted' ? 'all' : 'accepted')}
+          >
+            ✅ Accepted
+          </span>
         </div>
       </div>
     </div>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import SearchBar from './components/SearchBar'
 import PeopleGrid from './components/PeopleGrid'
+import Toast from './components/Toast'
 import { peopleData } from './data/peopleData'
 import './App.css'
 
@@ -13,15 +14,25 @@ function App() {
     const saved = localStorage.getItem('likedPeople')
     return saved ? JSON.parse(saved) : []
   })
+  const [connectionStatus, setConnectionStatus] = useState(() => {
+    const saved = localStorage.getItem('connectionStatus')
+    return saved ? JSON.parse(saved) : {}
+  })
   const [activeFilter, setActiveFilter] = useState('all')
+  const [statusFilter, setStatusFilter] = useState('all')
+  const [toast, setToast] = useState(null)
 
   useEffect(() => {
     filterPeople()
-  }, [searchTerm, searchType, people, activeFilter, likedPeople])
+  }, [searchTerm, searchType, people, activeFilter, likedPeople, statusFilter, connectionStatus])
 
   useEffect(() => {
     localStorage.setItem('likedPeople', JSON.stringify(likedPeople))
   }, [likedPeople])
+
+  useEffect(() => {
+    localStorage.setItem('connectionStatus', JSON.stringify(connectionStatus))
+  }, [connectionStatus])
 
   const filterPeople = () => {
     let filtered = people
@@ -29,6 +40,15 @@ function App() {
     // Apply liked filter first
     if (activeFilter === 'liked') {
       filtered = filtered.filter(person => likedPeople.includes(person.id))
+    }
+
+    // Apply status filter
+    if (statusFilter === 'requested') {
+      filtered = filtered.filter(person => connectionStatus[person.id] === 'requested')
+    } else if (statusFilter === 'not-requested') {
+      filtered = filtered.filter(person => !connectionStatus[person.id] || connectionStatus[person.id] === 'none')
+    } else if (statusFilter === 'accepted') {
+      filtered = filtered.filter(person => connectionStatus[person.id] === 'accepted')
     }
 
     // Then apply search filter
@@ -82,6 +102,26 @@ function App() {
     setActiveFilter(filter)
   }
 
+  const handleStatusFilterChange = (filter) => {
+    setStatusFilter(filter)
+  }
+
+  const handleConnect = (personId) => {
+    setConnectionStatus(prev => ({
+      ...prev,
+      [personId]: 'requested'
+    }))
+    showToast('Connection requested!')
+  }
+
+  const showToast = (message) => {
+    setToast(message)
+  }
+
+  const closeToast = () => {
+    setToast(null)
+  }
+
   return (
     <div className="app">
       <header className="app-header">
@@ -106,7 +146,9 @@ function App() {
           <SearchBar 
             onSearch={handleSearch} 
             onFilterChange={handleFilterChange}
+            onStatusFilterChange={handleStatusFilterChange}
             activeFilter={activeFilter}
+            statusFilter={statusFilter}
             likedCount={likedPeople.length}
           />
         </div>
@@ -118,10 +160,13 @@ function App() {
           <PeopleGrid 
             people={filteredPeople} 
             likedPeople={likedPeople}
+            connectionStatus={connectionStatus}
             onLike={handleLike}
+            onConnect={handleConnect}
           />
         </div>
       </main>
+      {toast && <Toast message={toast} onClose={closeToast} />}
     </div>
   )
 }
