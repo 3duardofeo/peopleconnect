@@ -1,39 +1,41 @@
 import React, { useState } from 'react'
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+import L from 'leaflet'
 import PersonCard from './PersonCard'
 import './MapView.css'
+import 'leaflet/dist/leaflet.css'
+
+// Fix for default marker icon issue with Leaflet
+delete L.Icon.Default.prototype._getIconUrl
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
+  iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+})
 
 const MapView = ({ people, likedPeople, connectionStatus, onLike, onConnect }) => {
   const [selectedPerson, setSelectedPerson] = useState(null)
 
-  // Approximate positioning based on geographic location (simplified)
-  const getPosition = (person) => {
-    const city = person.location.city.toLowerCase()
+  // Create custom icons for avatars
+  const createCustomIcon = (person, isLiked) => {
+    const avatarUrl = person.avatar
+    const initial = person.name.charAt(0).toUpperCase()
+    const borderColor = isLiked ? '#ff0000' : '#0000ff'
     
-    // Simplified positioning (percentage from left, percentage from top)
-    const positions = {
-      'tokyo': { left: '85%', top: '38%' },
-      'mexico city': { left: '15%', top: '45%' },
-      'cairo': { left: '52%', top: '40%' },
-      'mumbai': { left: '70%', top: '45%' },
-      'copenhagen': { left: '48%', top: '25%' },
-      'lagos': { left: '48%', top: '50%' },
-      'beijing': { left: '80%', top: '35%' },
-      'são paulo': { left: '28%', top: '70%' },
-      'palermo': { left: '50%', top: '36%' },
-      'paris': { left: '47%', top: '30%' },
-      'accra': { left: '46%', top: '50%' },
-      'moscow': { left: '56%', top: '25%' },
-      'torino': { left: '49%', top: '32%' },
-      'seoul': { left: '82%', top: '36%' },
-      'marrakech': { left: '45%', top: '40%' },
-      'miami': { left: '18%', top: '44%' },
-      'chicago': { left: '14%', top: '33%' },
-      'toronto': { left: '17%', top: '30%' },
-      'berlin': { left: '50%', top: '27%' },
-      'albuquerque': { left: '10%', top: '37%' }
-    }
-    
-    return positions[city] || { left: '50%', top: '50%' }
+    return L.divIcon({
+      className: 'custom-marker',
+      html: `
+        <div class="map-marker-icon ${isLiked ? 'liked' : ''}" style="border-color: ${borderColor};">
+          ${avatarUrl ? 
+            `<img src="${avatarUrl}" alt="${person.name}" class="marker-avatar-img" />` : 
+            `<div class="marker-initial-icon">${initial}</div>`
+          }
+        </div>
+      `,
+      iconSize: [40, 40],
+      iconAnchor: [20, 40],
+      popupAnchor: [0, -40]
+    })
   }
 
   const handleMarkerClick = (person) => {
@@ -47,36 +49,38 @@ const MapView = ({ people, likedPeople, connectionStatus, onLike, onConnect }) =
   return (
     <div className="map-view">
       <div className="map-container">
-        <div className="world-map">
-          {/* Avatar markers */}
+        <MapContainer 
+          center={[20, 0]} 
+          zoom={2} 
+          style={{ height: '600px', width: '100%' }}
+          scrollWheelZoom={true}
+        >
+          <TileLayer
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+          
           {people.map((person) => {
-            const position = getPosition(person)
+            const coords = person.location.coordinates
             const isLiked = likedPeople.includes(person.id)
             
             return (
-              <div
+              <Marker
                 key={person.id}
-                className={`map-marker ${isLiked ? 'liked' : ''}`}
-                style={{ left: position.left, top: position.top }}
-                onClick={() => handleMarkerClick(person)}
-                title={`${person.name} - ${person.location.city}`}
+                position={[coords.lat, coords.lng]}
+                icon={createCustomIcon(person, isLiked)}
+                eventHandlers={{
+                  click: () => handleMarkerClick(person)
+                }}
               >
-                {person.avatar ? (
-                  <img 
-                    src={person.avatar} 
-                    alt={person.name}
-                    className="marker-avatar"
-                  />
-                ) : (
-                  <div className="marker-initial">
-                    {person.name.charAt(0)}
-                  </div>
-                )}
-                <div className="marker-pulse"></div>
-              </div>
+                <Popup>
+                  <div style={{ fontWeight: 'bold' }}>{person.name}</div>
+                  <div style={{ fontSize: '12px' }}>{person.location.city}, {person.location.country}</div>
+                </Popup>
+              </Marker>
             )
           })}
-        </div>
+        </MapContainer>
       </div>
 
       {/* Popup card when marker is clicked */}
@@ -99,4 +103,3 @@ const MapView = ({ people, likedPeople, connectionStatus, onLike, onConnect }) =
 }
 
 export default MapView
-
