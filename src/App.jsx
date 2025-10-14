@@ -3,6 +3,7 @@ import SearchBar from './components/SearchBar'
 import PeopleGrid from './components/PeopleGrid'
 import MapView from './components/MapView'
 import Toast from './components/Toast'
+import ThemeToggle from './components/ThemeToggle'
 import { peopleData } from './data/peopleData'
 import './App.css'
 
@@ -138,6 +139,7 @@ function App() {
 
   return (
     <div className="app">
+      <ThemeToggle />
       <header className="app-header">
         <div className="title-bar">
           <div className="title-bar-controls">
