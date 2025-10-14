@@ -16,6 +16,8 @@ L.Icon.Default.mergeOptions({
 const MapView = ({ people, likedPeople, connectionStatus, onLike, onConnect }) => {
   const [selectedPerson, setSelectedPerson] = useState(null)
 
+  console.log('MapView rendering with', people.length, 'people')
+
   // Create custom icons for avatars
   const createCustomIcon = (person, isLiked) => {
     const avatarUrl = person.avatar
@@ -48,11 +50,23 @@ const MapView = ({ people, likedPeople, connectionStatus, onLike, onConnect }) =
 
   return (
     <div className="map-view">
-      <div className="map-container">
+      <div className="map-container" style={{ position: 'relative', width: '100%', height: '600px' }}>
+        <div style={{ 
+          position: 'absolute', 
+          top: '10px', 
+          left: '10px', 
+          background: 'rgba(192,192,192,0.9)', 
+          padding: '8px', 
+          zIndex: 1000,
+          border: '2px solid #808080',
+          fontWeight: 'bold'
+        }}>
+          🗺️ Interactive World Map - {people.length} people
+        </div>
         <MapContainer 
           center={[20, 0]} 
           zoom={2} 
-          style={{ height: '600px', width: '100%' }}
+          style={{ height: '100%', width: '100%' }}
           scrollWheelZoom={true}
         >
           <TileLayer
@@ -62,6 +76,11 @@ const MapView = ({ people, likedPeople, connectionStatus, onLike, onConnect }) =
           
           {people.map((person) => {
             const coords = person.location.coordinates
+            if (!coords || !coords.lat || !coords.lng) {
+              console.warn('Missing coordinates for', person.name)
+              return null
+            }
+            
             const isLiked = likedPeople.includes(person.id)
             
             return (
