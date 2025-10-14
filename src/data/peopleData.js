@@ -271,5 +271,21 @@ export const peopleData = [
     bio: "Young artist and language enthusiast. Love expressing myself through art and music. Excited to learn about different cultures and make new friends from around the world.",
     distance: 0.3,
     avatar: `${import.meta.env.BASE_URL}images/marina.jpg`
+  },
+  {
+    id: 18,
+    name: "Jeff Guerrero",
+    age: 32,
+    culture: "American",
+    location: {
+      city: "Chicago",
+      country: "United States",
+      zipCode: "60601"
+    },
+    languages: ["English"],
+    interests: ["Design", "Illustration", "Music", "Asian Food"],
+    bio: "UX Designer in Firefox Mobile Team. Passionate about creating intuitive user experiences and exploring design innovations. Love illustration, music, and discovering new Asian cuisine.",
+    distance: 8.5,
+    avatar: `${import.meta.env.BASE_URL}images/jeff.jpg`
   }
 ]
