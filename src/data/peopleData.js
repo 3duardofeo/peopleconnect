@@ -303,5 +303,37 @@ export const peopleData = [
     bio: "UX Designer inside Firefox Mobile UX Team in Mozilla specialized in Android Design. Passionate about creating seamless mobile experiences and exploring the intersection of design and technology.",
     distance: 12.2,
     avatar: `${import.meta.env.BASE_URL}images/aarjav.jpg`
+  },
+  {
+    id: 20,
+    name: "Nicole Weber",
+    age: 34,
+    culture: "German",
+    location: {
+      city: "Berlin",
+      country: "Germany",
+      zipCode: "10115"
+    },
+    languages: ["English", "German"],
+    interests: ["Music", "Art", "Design", "Traveling"],
+    bio: "Sr UX Designer, currently working in Firefox Mobile iOS and Android. Passionate about creating beautiful and intuitive mobile experiences. Love exploring art, design, and traveling to new places.",
+    distance: 18.7,
+    avatar: `${import.meta.env.BASE_URL}images/nicole.jpg`
+  },
+  {
+    id: 21,
+    name: "Chris Logan",
+    age: 38,
+    culture: "American",
+    location: {
+      city: "Albuquerque",
+      country: "United States",
+      zipCode: "87101"
+    },
+    languages: ["English"],
+    interests: ["Music", "Playing Guitar", "Design", "Traveling"],
+    bio: "Accomplished senior product designer and leader with many years of experience driving results for major companies in the areas of user experience, and accessibility. Passionate about creating inclusive designs.",
+    distance: 14.3,
+    avatar: `${import.meta.env.BASE_URL}images/chris.jpg`
   }
 ]
