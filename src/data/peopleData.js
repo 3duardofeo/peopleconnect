@@ -13,7 +13,7 @@ export const peopleData = [
     languages: ["Japanese", "English", "Korean"],
     interests: ["Anime", "Sushi Making", "Martial Arts", "Technology"],
     bio: "Passionate about sharing Japanese culture and learning about others. Love connecting with people who appreciate traditional arts and modern innovation.",
-    distance: 2.3,
+    distance: 6912, // Miami to Tokyo
     avatar: `${import.meta.env.BASE_URL}images/yuki.jpg`
   },
   {
@@ -29,7 +29,7 @@ export const peopleData = [
     languages: ["Spanish", "English", "French"],
     interests: ["Cooking", "Dancing", "Art", "Photography"],
     bio: "Chef and cultural ambassador. I love sharing authentic Mexican recipes and learning about different cuisines from around the world.",
-    distance: 5.7,
+    distance: 1293, // Miami to Mexico City
     avatar: `${import.meta.env.BASE_URL}images/maria.jpg`
   },
   {
@@ -45,7 +45,7 @@ export const peopleData = [
     languages: ["Arabic", "English", "French"],
     interests: ["History", "Calligraphy", "Music", "Architecture"],
     bio: "Historian and calligraphy artist. Fascinated by ancient civilizations and love sharing the rich history of Egypt with others.",
-    distance: 8.2,
+    distance: 6555, // Miami to Cairo
     avatar: `${import.meta.env.BASE_URL}images/ahmed.jpg`
   },
   {
@@ -61,7 +61,7 @@ export const peopleData = [
     languages: ["Hindi", "English", "Gujarati", "Sanskrit"],
     interests: ["Yoga", "Meditation", "Classical Dance", "Spirituality"],
     bio: "Yoga instructor and spiritual seeker. Passionate about sharing ancient wisdom and helping others find inner peace.",
-    distance: 12.1,
+    distance: 8064, // Miami to Mumbai
     avatar: `${import.meta.env.BASE_URL}images/priya.jpg`
   },
   {
@@ -77,7 +77,7 @@ export const peopleData = [
     languages: ["Danish", "English", "German", "Swedish"],
     interests: ["Design", "Sustainability", "Cycling", "Nordic Culture"],
     bio: "Designer and environmental activist. Love the Danish concept of 'hygge' and enjoy sharing Nordic lifestyle with others.",
-    distance: 15.8,
+    distance: 4494, // Miami to Copenhagen
     avatar: `${import.meta.env.BASE_URL}images/lars.jpg`
   },
   {
@@ -93,7 +93,7 @@ export const peopleData = [
     languages: ["English", "Yoruba", "French"],
     interests: ["Fashion", "Music", "Literature", "Entrepreneurship"],
     bio: "Fashion designer and entrepreneur. Proud of my Nigerian heritage and love connecting with creative minds worldwide.",
-    distance: 18.5,
+    distance: 5606, // Miami to Lagos
     avatar: `${import.meta.env.BASE_URL}images/aisha.jpg`
   },
   {
@@ -109,7 +109,7 @@ export const peopleData = [
     languages: ["Mandarin", "English", "Japanese"],
     interests: ["Calligraphy", "Tea Ceremony", "Martial Arts", "Philosophy"],
     bio: "Traditional Chinese medicine practitioner and calligraphy master. Passionate about sharing ancient Chinese wisdom and healing arts.",
-    distance: 22.3,
+    distance: 8119, // Miami to Beijing
     avatar: `${import.meta.env.BASE_URL}images/chen.jpg`
   },
   {
@@ -125,7 +125,7 @@ export const peopleData = [
     languages: ["Portuguese", "English", "Spanish"],
     interests: ["Samba", "Capoeira", "Nature", "Carnival"],
     bio: "Dancer and environmentalist. Love the vibrant Brazilian culture and enjoy sharing our passion for music, dance, and nature.",
-    distance: 25.7,
+    distance: 4307, // Miami to São Paulo
     avatar: `${import.meta.env.BASE_URL}images/isabella.jpg`
   },
   {
@@ -141,7 +141,7 @@ export const peopleData = [
     languages: ["Italian", "English"],
     interests: ["Fashion", "Art", "Movies", "Dancing"],
     bio: "Italian actress and model. Love sharing Italian culture and fashion with others.",
-    distance: 28.9,
+    distance: 4803, // Miami to Palermo
     avatar: `${import.meta.env.BASE_URL}images/loredana.jpg`
   },
   {
@@ -157,7 +157,7 @@ export const peopleData = [
     languages: ["French", "English", "Italian", "Spanish"],
     interests: ["Art", "Literature", "Wine", "Fashion"],
     bio: "Art curator and wine enthusiast. Passionate about French culture, art, and cuisine. Love connecting with fellow art lovers.",
-    distance: 31.2,
+    distance: 4431, // Miami to Paris
     avatar: `${import.meta.env.BASE_URL}images/sophie.jpg`
   },
   {
@@ -173,7 +173,7 @@ export const peopleData = [
     languages: ["English", "Twi", "French"],
     interests: ["Drumming", "Traditional Music", "Community", "Education"],
     bio: "Music teacher and community leader. Proud of our rich musical traditions and love sharing the rhythm of Ghana with the world.",
-    distance: 35.6,
+    distance: 5718, // Miami to Accra
     avatar: `${import.meta.env.BASE_URL}images/kwame.jpg`
   },
   {
@@ -189,7 +189,7 @@ export const peopleData = [
     languages: ["Russian", "English", "German"],
     interests: ["Literature", "Classical Music", "Ballet", "Chess"],
     bio: "Literature professor and chess master. Fascinated by Russian literature and classical arts. Love intellectual conversations.",
-    distance: 38.4,
+    distance: 5429, // Miami to Moscow
     avatar: `${import.meta.env.BASE_URL}images/elena.jpg`
   },
   {
@@ -205,7 +205,7 @@ export const peopleData = [
     languages: ["Italian", "English", "Spanish"],
     interests: ["Fashion", "Art", "Soccer", "Poetry"],
     bio: "TV presenter and fashion enthusiast. Love sharing Italian culture and fashion with others.",
-    distance: 42.1,
+    distance: 4851, // Miami to Torino
     avatar: `${import.meta.env.BASE_URL}images/ilaria.jpg`
   },
   {
@@ -221,7 +221,7 @@ export const peopleData = [
     languages: ["Korean", "English", "Japanese"],
     interests: ["K-Pop", "Technology", "Gaming", "Korean Cuisine"],
     bio: "Software developer and K-culture enthusiast. Love sharing Korean pop culture and technology innovations with others.",
-    distance: 45.8,
+    distance: 7467, // Miami to Seoul
     avatar: `${import.meta.env.BASE_URL}images/kim.jpg`
   },
   {
@@ -237,7 +237,7 @@ export const peopleData = [
     languages: ["Arabic", "French", "English", "Berber"],
     interests: ["Henna Art", "Traditional Crafts", "Cooking", "Sufi Music"],
     bio: "Artisan and cultural guide. Passionate about Moroccan crafts and traditions. Love sharing the magic of Marrakech with visitors.",
-    distance: 48.7,
+    distance: 4595, // Miami to Marrakech
     avatar: `${import.meta.env.BASE_URL}images/fatima.jpg`
   },
   {
@@ -253,7 +253,7 @@ export const peopleData = [
     languages: ["Spanish", "English", "Portuguese", "Italian"],
     interests: ["Technology", "Entrepreneurship", "Soccer", "Latin Music"],
     bio: "Tech entrepreneur and cultural bridge-builder. Proud of my Venezuelan heritage while embracing the vibrant diversity of Miami. Love connecting people through technology and culture.",
-    distance: 0.5,
+    distance: 0, // Miami to Miami (Eduardo)
     avatar: `${import.meta.env.BASE_URL}images/eduardo.jpg`
   },
   {
@@ -269,7 +269,7 @@ export const peopleData = [
     languages: ["English", "Italian"],
     interests: ["Art", "Music", "Dancing", "Reading"],
     bio: "Young artist and language enthusiast. Love expressing myself through art and music. Excited to learn about different cultures and make new friends from around the world.",
-    distance: 0.3,
+    distance: 0, // Miami to Miami (Marina)
     avatar: `${import.meta.env.BASE_URL}images/marina.jpg`
   },
   {
@@ -285,7 +285,7 @@ export const peopleData = [
     languages: ["English"],
     interests: ["Design", "Illustration", "Music", "Asian Food"],
     bio: "UX Designer in Firefox Mobile Team. Passionate about creating intuitive user experiences and exploring design innovations. Love illustration, music, and discovering new Asian cuisine.",
-    distance: 8.5,
+    distance: 1192, // Miami to Chicago
     avatar: `${import.meta.env.BASE_URL}images/jeff.jpg`
   },
   {
@@ -301,7 +301,7 @@ export const peopleData = [
     languages: ["English", "French", "Hindi"],
     interests: ["Music", "Technology", "Outdoor"],
     bio: "UX Designer inside Firefox Mobile UX Team in Mozilla specialized in Android Design. Passionate about creating seamless mobile experiences and exploring the intersection of design and technology.",
-    distance: 12.2,
+    distance: 1245, // Miami to Toronto
     avatar: `${import.meta.env.BASE_URL}images/aarjav.jpg`
   },
   {
@@ -317,7 +317,7 @@ export const peopleData = [
     languages: ["English", "German"],
     interests: ["Music", "Art", "Design", "Traveling"],
     bio: "Sr UX Designer, currently working in Firefox Mobile iOS and Android. Passionate about creating beautiful and intuitive mobile experiences. Love exploring art, design, and traveling to new places.",
-    distance: 18.7,
+    distance: 4780, // Miami to Berlin
     avatar: `${import.meta.env.BASE_URL}images/nicole.jpg`
   },
   {
@@ -333,7 +333,7 @@ export const peopleData = [
     languages: ["English"],
     interests: ["Music", "Playing Guitar", "Design", "Traveling"],
     bio: "Accomplished senior product designer and leader with many years of experience driving results for major companies in the areas of user experience, and accessibility. Passionate about creating inclusive designs.",
-    distance: 14.3,
+    distance: 1643, // Miami to Albuquerque
     avatar: `${import.meta.env.BASE_URL}images/chris.jpg`
   }
 ]
