@@ -48,9 +48,6 @@ const MapView = ({ people, likedPeople, connectionStatus, onLike, onConnect }) =
     <div className="map-view">
       <div className="map-container">
         <div className="world-map">
-          {/* Simple world map background */}
-          <div className="map-background"></div>
-          
           {/* Avatar markers */}
           {people.map((person) => {
             const position = getPosition(person)
