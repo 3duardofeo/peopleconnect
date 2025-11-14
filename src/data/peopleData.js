@@ -308,22 +308,6 @@ export const peopleData = [
     avatar: `${import.meta.env.BASE_URL}images/aarjav.jpg`
   },
   {
-    id: 20,
-    name: "Nicole Weber",
-    age: 34,
-    culture: "German",
-    location: {
-      city: "Berlin",
-      country: "Germany",
-      zipCode: "10115"
-    },
-    languages: ["English", "German"],
-    interests: ["Music", "Art", "Design", "Traveling"],
-    bio: "Sr UX Designer, currently working in Firefox Mobile iOS and Android. Passionate about creating beautiful and intuitive mobile experiences. Love exploring art, design, and traveling to new places.",
-    distance: 4780, // Miami to Berlin
-    avatar: `${import.meta.env.BASE_URL}images/nicole.jpg`
-  },
-  {
     id: 21,
     name: "Chris Logan",
     age: 38,
