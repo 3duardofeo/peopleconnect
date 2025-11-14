@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import SearchBar from './components/SearchBar'
 import PeopleGrid from './components/PeopleGrid'
 import MapView from './components/MapView'
@@ -8,7 +8,7 @@ import { peopleData } from './data/peopleData'
 import './App.css'
 
 function App() {
-  const [people, setPeople] = useState(peopleData)
+  const [people] = useState(peopleData)
   const [filteredPeople, setFilteredPeople] = useState(peopleData)
   const [searchTerm, setSearchTerm] = useState('')
   const [searchType, setSearchType] = useState('all')
@@ -25,19 +25,7 @@ function App() {
   const [toast, setToast] = useState(null)
   const [viewMode, setViewMode] = useState('grid') // 'grid' or 'map'
 
-  useEffect(() => {
-    filterPeople()
-  }, [searchTerm, searchType, people, activeFilter, likedPeople, statusFilter, connectionStatus])
-
-  useEffect(() => {
-    localStorage.setItem('likedPeople', JSON.stringify(likedPeople))
-  }, [likedPeople])
-
-  useEffect(() => {
-    localStorage.setItem('connectionStatus', JSON.stringify(connectionStatus))
-  }, [connectionStatus])
-
-  const filterPeople = () => {
+  const filterPeople = useCallback(() => {
     let filtered = people
 
     // Apply liked filter first
@@ -84,7 +72,19 @@ function App() {
     }
 
     setFilteredPeople(filtered)
-  }
+  }, [people, activeFilter, likedPeople, statusFilter, connectionStatus, searchTerm, searchType])
+
+  useEffect(() => {
+    filterPeople()
+  }, [filterPeople])
+
+  useEffect(() => {
+    localStorage.setItem('likedPeople', JSON.stringify(likedPeople))
+  }, [likedPeople])
+
+  useEffect(() => {
+    localStorage.setItem('connectionStatus', JSON.stringify(connectionStatus))
+  }, [connectionStatus])
 
   const handleSearch = (term, type) => {
     setSearchTerm(term)

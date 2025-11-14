@@ -1,4 +1,3 @@
-import React from 'react'
 import { MapPin, Globe, MessageCircle, Heart } from 'lucide-react'
 import './PersonCard.css'
 

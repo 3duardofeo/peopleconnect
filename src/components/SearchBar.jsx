@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Search, MapPin, Globe, Hash } from 'lucide-react'
+import { useState } from 'react'
+import { Search, MapPin, Hash } from 'lucide-react'
 import './SearchBar.css'
 
 const SearchBar = ({ onSearch, onFilterChange, onStatusFilterChange, activeFilter, statusFilter, likedCount }) => {
