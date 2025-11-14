@@ -247,7 +247,7 @@ export const peopleData = [
     id: 16,
     name: "Eduardo Feo",
     age: 28,
-    culture: "Venezuelan-American",
+    culture: "Italian-Venezuelan-American",
     location: {
       city: "Miami",
       country: "United States",
@@ -295,7 +295,7 @@ export const peopleData = [
     id: 19,
     name: "Aarjav Pandya",
     age: 29,
-    culture: "Indian-Canadian",
+    culture: "Canadian",
     location: {
       city: "Toronto",
       country: "Canada",
